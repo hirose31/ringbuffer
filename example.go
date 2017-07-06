@@ -22,9 +22,20 @@ func main() {
 	fmt.Printf("got: %s\n", val.(string))
 	// => got: foo
 
-	// clear and fetch all elements
 	rb.Push("baz")
-	vals, err := rb.Clear()
+	// fetch all alements
+	vals, err := rb.Fetch()
+	if err != nil {
+		panic(err)
+	}
+	for i, v := range vals {
+		fmt.Printf("[%d]%s\n", i, v)
+	}
+	// => [0]bar
+	// => [1]baz
+
+	// clear and fetch all elements
+	vals, err = rb.Clear()
 	if err != nil {
 		panic(err)
 	}

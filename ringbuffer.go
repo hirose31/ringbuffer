@@ -45,6 +45,19 @@ func (rb *RingBuffer) Shift() (interface{}, error) {
 	return val, nil
 }
 
+// Fetch returns all elements
+func (rb *RingBuffer) Fetch() ([]interface{}, error) {
+	val := make([]interface{}, rb.len)
+
+	len := rb.len
+	for i := 0; len > 0; len-- {
+		val[i] = rb.buf[(rb.head+i)%rb.size]
+		i++
+	}
+
+	return val, nil
+}
+
 // Clear removes all elements and returns those elements.
 func (rb *RingBuffer) Clear() ([]interface{}, error) {
 	val := make([]interface{}, rb.len)

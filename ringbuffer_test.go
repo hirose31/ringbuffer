@@ -136,6 +136,10 @@ func TestCircular(t *testing.T) {
 	is("1 shift", t, val, "22")
 	ck("1 shift", t, rb, 2, 2, 0, []interface{}{"11", "22", "3", "4", "5"})
 
+	vals, _ = rb.Fetch()
+	isDeeply("fetch", t, vals, []interface{}{})
+	ck("fetch", t, rb, 2, 2, 0, []interface{}{"11", "22", "3", "4", "5"})
+
 	vals, _ = rb.Clear()
 	isDeeply("clear", t, vals, []interface{}{})
 	ck("clear", t, rb, 2, 2, 0, []interface{}{"11", "22", "3", "4", "5"})
