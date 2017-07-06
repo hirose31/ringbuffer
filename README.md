@@ -1,5 +1,11 @@
 # RingBuffer
 
+simple ring (circular) buffer implementation
+
+[![Build Status](https://travis-ci.org/hirose31/ringbuffer.png?branch=master)](https://travis-ci.org/hirose31/ringbuffer)
+
+[![GoDoc](https://godoc.org/github.com/hirose31/ringbuffer?status.svg)](https://godoc.org/github.com/hirose31/ringbuffer)
+
 ## Installation
 
 ```
