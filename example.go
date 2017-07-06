@@ -1,14 +1,5 @@
-# RingBuffer
+// +build ignore
 
-## Installation
-
-```
-go get -u github.com/hirose31/ringbuffer
-```
-
-## Usage
-
-``` go
 package main
 
 import (
@@ -60,6 +51,3 @@ func main() {
 	// => [1]three
 	// => [2]four
 }
-
-```
-
